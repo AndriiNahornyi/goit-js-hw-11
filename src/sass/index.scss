@@ -1,2 +1,158 @@
 @import './common';
-@import './example';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    padding: 0 5px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: tan;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__input {
+    padding: 5px 10px;
+    height: 30px;
+    width: 100%;
+    background-color: antiquewhite;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.form__btn {
+    margin-left: 10px;
+    background-color: antiquewhite;
+    transition-property: scale(1);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form__btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.form__svg {
+    display: block;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
+}
+
+.more-btn-box {
+    display: flex;
+    justify-content: center;
+}
+
+.load-more {
+    display: block;
+    margin: auto;
+    padding: 0 5px;
+    font-size: 18px;
+    height: 50px;
+    font-weight:600;
+    background-color: tan;
+}
+
+.load-more img {
+margin-left: auto;
+margin-right: auto;
+width: 20px; 
+height: 20px;
+
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.more__svg {
+    display: block;
+
+}
+
+.photo-card {
+    display: block;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    background-color: tan;
+    border-radius: 3px;
+}
+
+// .link-img {}
+
+.card-img {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.info {
+    display: flex;
+    padding: 5px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.info-label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.info-span {
+    margin-bottom: 10px;
+}
