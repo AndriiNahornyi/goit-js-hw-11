@@ -2,7 +2,6 @@ import './sass/index.scss';
 import { getPhoto, itemPerPage } from './api/webApi';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
-//??????????????????????????
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 // Variables
@@ -37,7 +36,12 @@ async function loadMoreCards(searchValue) {
 function onSubmit(event) {
   event.preventDefault();
   clearMarkup(galleryEl);
-  searchValue = event.currentTarget[0].value;
+  searchValue = event.currentTarget.elements.searchQuery.value.trim();
+  console.dir(event.currentTarget.elements);
+   if (!searchValue) {
+      console.log('no arg!');
+      return;
+    }
   mountData(searchValue);
 }
 
@@ -51,10 +55,6 @@ async function mountData(searchValue) {
     }
     // moreBtn.classList.remove('visually-hidden');
     removeClass('visually-hidden');
-
-// Remove & add listeners
-    moreBtn.removeEventListener('click', moreBtnClbk);
-    moreBtn.addEventListener('click', moreBtnClbk);
     
     if (data.hits.length === 0) {
       addClass('visually-hidden');
@@ -99,11 +99,6 @@ function createGalleryMarkup(photoArr) {
   </div>
 </div>`).join(''); 
 }
-
-// function doLightbox() {
-  // const linkImg = document.querySelector('.link-img');
-  // linkImg.addEventListener('click', openModal);
-// }
 
 function clearMarkup(element) {
   element.innerHTML = '';

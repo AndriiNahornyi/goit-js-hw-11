@@ -16,10 +16,10 @@ export const BASE_URL = `https://pixabay.com/api/?${searchParams}`;
 
 export async function getPhoto(search, page) {
   try {
-    if (!search.trim()) {
-      console.log('no arg!');
-      return;
-    }
+    // if (!search.trim()) {
+    //   console.log('no arg!');
+    //   return;
+    // }
     const response = await axios.get(`${BASE_URL}&page=${page}&q=${search}`);
     return response.data;
   } catch (error) {
