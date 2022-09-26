@@ -1,5 +1,5 @@
 import './sass/index.scss';
-import { BASE_URL, getPhoto, itemPerPage } from './api/webApi';
+import { getPhoto, itemPerPage } from './api/webApi';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 //??????????????????????????
