@@ -23,6 +23,7 @@ export async function getPhoto(search, page) {
     const response = await axios.get(`${BASE_URL}&page=${page}&q=${search}`);
     return response.data;
   } catch (error) {
-    Notiflix.Notify.failure(error.message);
+    throw new Error(error);
+    // Notiflix.Notify.failure(error.message);
   }
 }

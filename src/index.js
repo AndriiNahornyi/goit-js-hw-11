@@ -14,7 +14,10 @@ let page = 1;
 let searchValue = '';
 
 const totalPages = Math.ceil(500 / itemPerPage);
-
+let lightbox = new SimpleLightbox('.photo-card a', {
+    captionDelay: 250,
+});
+  
 // Listeners
 formEl.addEventListener('submit', onSubmit);
 
@@ -28,7 +31,7 @@ async function loadMoreCards(searchValue) {
   // moreBtn.classList.add('visually-hidden');
   addClass('visually-hidden');
   }
-  doLightbox();
+  lightbox.refresh();
 }
 
 function onSubmit(event) {
@@ -61,11 +64,11 @@ async function mountData(searchValue) {
     }
     Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`, 500);
     const galleryMarkup = createGalleryMarkup(data.hits);
-    galleryEl.insertAdjacentHTML('beforeend', galleryMarkup);   
-    doLightbox();
+    updateGallery(galleryMarkup);
+    lightbox.refresh();
   } catch (error) {
     addClass('visually-hidden');
-    console.log('error', error);
+    Notiflix.Notify.failure(error.message);
   }
 }
 
@@ -97,18 +100,10 @@ function createGalleryMarkup(photoArr) {
 </div>`).join(''); 
 }
 
-function doLightbox() {
-  const linkImg = document.querySelector('.link-img');
-  linkImg.addEventListener('click', openModal);
-
-  function openModal(event) {
-    event.preventDefault();
-  }
-
-  let lightbox = new SimpleLightbox('.photo-card a', {
-    captionDelay: 250,
-  });
-}
+// function doLightbox() {
+  // const linkImg = document.querySelector('.link-img');
+  // linkImg.addEventListener('click', openModal);
+// }
 
 function clearMarkup(element) {
   element.innerHTML = '';
@@ -120,4 +115,8 @@ function addClass(className) {
 
 function removeClass(className) {
   moreBtn.classList.remove(className);
+}
+
+function updateGallery(galleryMarkup) {
+   galleryEl.insertAdjacentHTML('beforeend', galleryMarkup);  
 }
