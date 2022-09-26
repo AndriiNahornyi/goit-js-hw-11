@@ -28,6 +28,7 @@ async function loadMoreCards(searchValue) {
   // moreBtn.classList.add('visually-hidden');
   addClass('visually-hidden');
   }
+  doLightbox();
 }
 
 function onSubmit(event) {
@@ -78,7 +79,7 @@ function createGalleryMarkup(photoArr) {
     downloads
   }) =>
     `<div class="photo-card">
-    <a class='link-img' href=${largeImageURL}><img src=${webformatURL} alt=${tags} loading="lazy" class="card-img"/></a>
+    <a class='link-img' href=${largeImageURL}><img src=${webformatURL} alt=${tags} loading="lazy" class="card-img" width='100%' height='70%'/></a>
   <div class="info">
     <p class="info-item">
       <b class="info-label">Likes </b><span class="info-span">${likes}</span>

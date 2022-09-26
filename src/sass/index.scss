@@ -13,7 +13,7 @@ body {
 button {
     margin: 0;
     padding: 0 5px;
-    height: 40px;
+    height: 30px;
     border: 1px solid transparent;
     border-radius: 4px;
 }
@@ -72,7 +72,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    gap: 15px;
+    gap: 20px;
 }
 
 .more-btn-box {
@@ -83,7 +83,7 @@ img {
 .load-more {
     display: block;
     margin: auto;
-    padding: 0 5px;
+    padding: 0 10px;
     font-size: 18px;
     height: 50px;
     font-weight:600;
@@ -93,8 +93,8 @@ img {
 .load-more img {
 margin-left: auto;
 margin-right: auto;
-width: 20px; 
-height: 20px;
+width: 15px; 
+height: 15px;
 
 }
 
@@ -114,7 +114,7 @@ height: 20px;
 
 .more__svg {
     display: block;
-
+    
 }
 
 .photo-card {
